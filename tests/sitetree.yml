@@ -1,0 +1,12 @@
+SiteTree:
+    newsroom:
+        Title: 'newsroom'
+        URLSegment: news
+    news1:
+        Title: 'news1'
+        URLSegment: 'first-news'
+        Parent: =>SiteTree.newsroom
+    news2:
+        Title: 'news2'
+        URLSegment: 'second-news'
+        Parent: =>SiteTree.newsroom

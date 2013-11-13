@@ -1,0 +1,4 @@
+name: static_caching
+---
+StaticCaching:
+    enabled: true
