@@ -1,6 +1,15 @@
 <?php
 
 class StaticCacheURLGatherer extends Object {
+
+	/**
+	 * 
+	 * @param SiteTree $page
+	 * @return ArrayList
+	 */
+	public function getPublishURLs(SiteTree $page) {
+		return $this->getURLs($page);
+	}
 	
 	/**
 	 * 
@@ -8,28 +17,30 @@ class StaticCacheURLGatherer extends Object {
 	 * @return string|false
 	 */
 	public function getURL(SiteTree $page) {
-		$oldMode = Versioned::get_reading_mode();
-		if(!$this->shouldBeCached($page)) {
+		if(!$this->canBeCached($page)) {
 			return false;
 		}
-		return $page->Link();
+		$link = new CacheURL();
+		$link->url = $page->Link();
+		return $link;
 	}
 	
 	/**
 	 * 
 	 * @param SiteTree $page
+	 * @return ArrayList
 	 */
 	public function getURLs(SiteTree $page) {
-		$urls = array();
+		$urls = new ArrayList();
 		$link = $this->getURL($page);
 		if($link) {
-			$urls[] = $link;
+			$urls->push($link);
 		}
 		while($page->ParentID != 0) {
 			$page = $page->Parent();
 			$link = $this->getURL($page);
 			if($link) {
-				$urls[] = $link;
+				$urls->push($link);
 			}
 		}
 		return $urls;
@@ -40,7 +51,7 @@ class StaticCacheURLGatherer extends Object {
 	 * @param SiteTree $page
 	 * @return boolean
 	 */
-	protected function shouldBeCached(SiteTree $page) {
+	protected function canBeCached(SiteTree $page) {
 		if(!$page->canView()) {
 			return false;
 		}

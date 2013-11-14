@@ -3,7 +3,7 @@
 class StaticCachingQueueTest extends SapphireTest {
 	
 	function testInstance() {
-		$this->assertTrue(new StaticCachingQueue() instanceof Object);
+		$this->assertTrue(new StaticCachingQueue() instanceof ArrayList);
 	}
 }
 

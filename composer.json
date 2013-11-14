@@ -1,0 +1,15 @@
+{
+	"name": "stojg/silverstripe-caching",
+	"type": "silverstripe-module",
+	"description": "Static caching framework",
+	"homepage": "http://silverstripe.org",
+	"license": "BSD-2-Clause",
+	"keywords": ["silverstripe", "framework"],
+	"authors": [
+		{
+			"name": "Stig Lindqvist",
+			"homepage": "http://stojg.net"
+			"email": "stojg.lindqvist@gmail.com"
+		}
+	]
+}

@@ -24,12 +24,12 @@ class StaticCacheURLGathererTest extends FunctionalTest {
 	
 	function testGetURLFromSimplePage() {
 		$page = $this->objFromFixture('SiteTree', 'newsroom');
-		$this->assertEquals('/news/', $this->obj->getURL($page));
+		$this->assertEquals(CacheURL::create('/news/'), $this->obj->getURL($page));
 	}
 	
 	function testGetURLFromNestedPage() {
 		$page = $this->objFromFixture('SiteTree', 'news1');
-		$this->assertEquals('/news/first-news/', $this->obj->getURL($page));
+		$this->assertEquals(CacheURL::create('/news/first-news/'), $this->obj->getURL($page));
 	}
 	
 	function testDontGetURLFromUnpublished() {
@@ -40,16 +40,19 @@ class StaticCacheURLGathererTest extends FunctionalTest {
 	
 	function testGetURLs() {
 		$page = $this->objFromFixture('SiteTree', 'news1');
-		$expected = array(
-			'/news/first-news/',
-			'/news/'
-		);
-		$this->assertEquals($expected, $this->obj->getURLs($page));
+		$first = new CacheURL('/news/first-news/');
+		$sd = CacheURL::create('/news/');
+		
+		$expected = new ArrayList(array($first, $sd));
+		$actual = $this->obj->getURLs($page);
+		$this->assertTrue($actual instanceof ArrayList);
+		$this->assertEquals(2, $actual->count());
+		$this->assertEquals($expected, $actual);
 	}
 	
 	function testGetURLsUnpublished() {
 		$this->useDraftSite(false);
 		$page = $this->objFromFixture('SiteTree', 'news1');
-		$this->assertEquals(array(), $this->obj->getURLs($page));
+		$this->assertEquals(new ArrayList(), $this->obj->getURLs($page));
 	}
 }
