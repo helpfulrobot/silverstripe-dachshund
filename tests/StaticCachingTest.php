@@ -26,4 +26,5 @@ class StaticCachingTest extends SapphireTest {
 		$sc = StaticCaching::create()->publish($page);
 		$this->assertTrue($sc->getBuilder()->queueHasChanged());
 	}
+	
 }
