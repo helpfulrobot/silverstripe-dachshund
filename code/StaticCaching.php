@@ -24,7 +24,7 @@ class StaticCaching extends Object {
 	 *
 	 * @var array
 	 */
-	public static $dependencies = array(
+	private static $dependencies = array(
         'urlGatherer' => '%$StaticCacheURLGatherer',
         'queue' => '%$StaticCachingQueue',
         'builder'=> '%$StaticCachingBuilder',
