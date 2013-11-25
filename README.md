@@ -2,6 +2,8 @@ Dachshund
 ==================
 A pluggable SilverStripe static caching module.
 
+[![Build Status](https://travis-ci.org/stojg/silverstripe-dachshund.png?branch=master)](https://travis-ci.org/stojg/silverstripe-dachshund)
+
 __Currently in pre alpha__
 
 ## First iteration
