@@ -1,15 +1,15 @@
 {
-	"name": "stojg/silverstripe-caching",
-	"type": "silverstripe-module",
-	"description": "Static caching framework",
-	"homepage": "http://silverstripe.org",
-	"license": "BSD-2-Clause",
-	"keywords": ["silverstripe", "framework"],
-	"authors": [
-		{
-			"name": "Stig Lindqvist",
-			"homepage": "http://stojg.net"
-			"email": "stojg.lindqvist@gmail.com"
-		}
-	]
+    "name": "stojg/silverstripe-dachshund",
+    "type": "silverstripe-module",
+    "description": "Static HTML caching framework",
+    "homepage": "https://github.com/stojg/silverstripe-dachshund/",
+    "license": "BSD-2-Clause",
+    "keywords": ["silverstripe", "module", "cache"],
+    "authors": [
+        {
+            "name": "Stig Lindqvist",
+            "homepage": "http://stojg.net",
+            "email": "stojg.lindqvist@gmail.com"
+        }
+    ]
 }
