@@ -1,5 +1,5 @@
 {
-    "name": "stojg/silverstripe-dachshund",
+    "name": "stojg/dachshund",
     "type": "silverstripe-module",
     "description": "Static HTML caching framework",
     "homepage": "https://github.com/stojg/silverstripe-dachshund/",
@@ -11,5 +11,10 @@
             "homepage": "http://stojg.net",
             "email": "stojg.lindqvist@gmail.com"
         }
-    ]
+    ],
+    "require":
+    {
+        "silverstripe/framework": "~3.1",
+        "silverstripe/cms": "~3.1"
+    }
 }
