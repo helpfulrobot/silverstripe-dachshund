@@ -1,9 +1,10 @@
 <?php
 
-class CacheStorage {
-	
-	public function __construct() {
-		;
-	}
-
+class CacheStorage
+{
+    
+    public function __construct()
+    {
+        ;
+    }
 }
